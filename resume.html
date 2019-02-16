@@ -1,0 +1,59 @@
+---
+layout: default
+background: '/assets/images/background.jpg'
+---
+
+<!-- Page Header -->
+{% if page.background %}
+<header style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+    {% else %}
+    <header>
+        {% endif %}
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <section class="resume-section p-3 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Vitaly Lavrov</h1>
+            <p class="mb-5">Software development is like art for me. Every new goal must be a challenge to my capabilities. Solving them is the only way to get stronger</p>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Experience</h2>
+
+          <div class="mb-5">
+            <h4 class="mb-0">Software Engineer</h4>
+            <div class="subheading">Lunatech Labs</div>
+            <span class="text-primary">January 2018 - Present</span>
+            <p></p>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="mb-0">Software Engineer</h4>
+            <div class="subheading">Elmar Reizen</div>
+            <span class="text-primary">August 2015 - December 2017</span>
+            <p></p>
+          </div>
+
+        </div>
+      </section>
+      <section class="resume-section p-3 d-flex flex-column">
+        <a class="btn btn-primary" href="https://drive.google.com/open?id=12yooFWGiZpRyLNOFOqhGV5281eRtBlwE">Download Full Version</a>
+      </section>
+
+    </div>
+  </div>
+</div>
