@@ -37,6 +37,14 @@
 
 --
 
+## Plan
+
+1 DHT for peer discovery
+2 Peer wire protocol
+3 Torrent metadata extension
+
+---
+
 ## Prepare environment
 
 ```sh
