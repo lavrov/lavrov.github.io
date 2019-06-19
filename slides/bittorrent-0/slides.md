@@ -37,17 +37,16 @@
 
 --
 
-<!-- .slide: data-background-size="900px" data-background="/assets/images/bittorrent-0/bittorrent-network.png" -->
-
----
-
 ## Prepare environment
 
-- java 8
-- mill
-- vscode
-  - live share
-  - metals
+```sh
+$ brew cask install adoptopenjdk8
+$ brew install mill
+$ brew cask install visual-studio-code
+```
+Install plugins in Visual Studio
+- [Live Share](https://visualstudio.microsoft.com/services/live-share/)
+- [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
 
 ---
 
@@ -56,3 +55,56 @@ Join shared session
 <img width="200px" data-src="/assets/images/bittorrent-0/vscode-logo.png">
 
 `Visual Studio Code`
+
+---
+
+## Protocol
+
+- [Specification](https://www.bittorrent.org/beps/bep_0003.html)
+
+--
+
+<!-- .slide: data-background-size="900px" data-background="https://upload.wikimedia.org/wikipedia/commons/0/09/BitTorrent_network.svg" -->
+
+--
+
+### Bencoding
+
+<small>
+
+- Strings are length-prefixed base ten followed by a colon and the string. For example `4:spam` corresponds to `spam`.
+
+- Integers are represented by an `i` followed by the number in base 10 followed by an `e`. For example `i3e` corresponds to `3` and `i-3e` corresponds to `-3`. Integers have no size limitation. `i-0e` is invalid. All encodings with a leading zero, such as `i03e`, are invalid, other than `i0e`, which of course corresponds to `0`.
+
+- Lists are encoded as an `l` followed by their elements (also bencoded) followed by an `e`. For example `l4:spam4:eggse` corresponds to `['spam', 'eggs']`.
+
+- Dictionaries are encoded as a `d` followed by a list of alternating keys and their corresponding values followed by an `e`. For example, `d3:cow3:moo4:spam4:eggse` corresponds to `{'cow': 'moo', 'spam': 'eggs'}` and `d4:spaml1:a1:bee` corresponds to `{'spam': ['a', 'b']}`. Keys must be strings and appear in sorted order (sorted as raw strings, not alphanumerics).
+
+</small>
+
+--
+
+### Bencoding
+
+
+```
+zero        = '0';
+
+non_zero    = '1' | ... | '9';
+
+digit       = zero | non_zero;
+
+number      = zero | [ '-' ], non_zero, { digit };
+
+integer     = 'i', number, 'e';
+
+string      = number, ':', byte string;
+
+dictionary  = 'd', { string, value }, 'e';
+
+value       = integer | string | dictionary;
+```
+
+<small>
+❗ string: number specifies length of byte string
+</small>
