@@ -89,21 +89,23 @@ Join shared session
 
 
 ```
-zero        = '0';
+zero_digit      = '0';
 
-non_zero    = '1' | ... | '9';
+non_zero_digit  = '1' | ... | '9';
 
-digit       = zero | non_zero;
+digit           = zero_digit | non_zero_digit;
 
-number      = zero | [ '-' ], non_zero, { digit };
+positive_number = zero_digit | ( non_zero_digit, { digit } )
 
-integer     = 'i', number, 'e';
+number          = [ '-' ], positive_number;
 
-string      = number, ':', byte string;
+integer         = 'i', number, 'e';
 
-dictionary  = 'd', { string, value }, 'e';
+string          = positive_number, ':', byte string;
 
-value       = integer | string | dictionary;
+dictionary      = 'd', { string, value }, 'e';
+
+value           = integer | string | dictionary;
 ```
 
 <small>
