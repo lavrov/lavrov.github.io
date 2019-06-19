@@ -2,7 +2,7 @@
 layout: "post"
 title: Functional Bittorrent
 subtitle: "Protocol implementation with cats-effect and fs2"
-date: "2019-05-20"
+date: "2019-06-20"
 background: '/assets/images/background.jpg'
 tags: 
   - slides
