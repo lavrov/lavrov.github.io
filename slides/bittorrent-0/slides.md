@@ -85,17 +85,13 @@ Join shared session
 
 --
 
-### Bencoding
+### Grammar (simplified)
 
 
 ```
-zero_digit      = '0';
+digit           = '0' | '1' | ... | '9';
 
-non_zero_digit  = '1' | ... | '9';
-
-digit           = zero_digit | non_zero_digit;
-
-positive_number = zero_digit | ( non_zero_digit, { digit } )
+positive_number = digit, { digit }
 
 number          = [ '-' ], positive_number;
 
