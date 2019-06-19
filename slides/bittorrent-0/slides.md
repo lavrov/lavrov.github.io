@@ -61,6 +61,7 @@ Join shared session
 ## Protocol
 
 - [Specification](https://www.bittorrent.org/beps/bep_0003.html)
+- [Specification](https://wiki.theory.org/index.php/BitTorrentSpecification) in wiki style
 
 --
 
