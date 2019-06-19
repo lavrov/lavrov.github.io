@@ -37,7 +37,19 @@
 
 --
 
-## Plan
+## Bittorrent in a nutshell
+
+--
+
+<!-- .slide: data-background-size="900px" data-background="https://upload.wikimedia.org/wikipedia/commons/0/09/BitTorrent_network.svg" -->
+
+--
+
+<!-- .slide: data-background-size="900px" data-background="/assets/images/bittorrent-0/workflow.svg" -->
+
+--
+
+## Grand Plan
 
 1. DHT for peer discovery
 2. Peer wire protocol
@@ -70,10 +82,6 @@ Join shared session
 
 - [Specification](https://www.bittorrent.org/beps/bep_0003.html)
 - [Specification](https://wiki.theory.org/index.php/BitTorrentSpecification) in wiki style
-
---
-
-<!-- .slide: data-background-size="900px" data-background="https://upload.wikimedia.org/wikipedia/commons/0/09/BitTorrent_network.svg" -->
 
 --
 
