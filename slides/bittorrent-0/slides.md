@@ -8,7 +8,7 @@
 
 - Doing programming for a living since 2010
 - Using Scala as the main language from the day one
-- Leaning toward (more) functional programming
+- Moving toward (more) functional programming
 
 ---
 
@@ -41,7 +41,22 @@
 
 --
 
+<!-- .slide: data-background-size="900px" data-background="/assets/images/bittorrent-0/network-types.png" -->
+
+--
+
 <!-- .slide: data-background-size="900px" data-background="https://upload.wikimedia.org/wikipedia/commons/0/09/BitTorrent_network.svg" -->
+
+--
+
+## Protocol
+
+- [Specification](https://www.bittorrent.org/beps/bep_0003.html)
+- [Specification](https://wiki.theory.org/index.php/BitTorrentSpecification) in wiki style
+
+---
+
+## Grand Plan
 
 --
 
@@ -49,39 +64,74 @@
 
 --
 
-## Grand Plan
-
-1. DHT for peer discovery
-2. Peer wire protocol
+1. Peer wire protocol
+2. DHT for peer discovery
 3. Torrent metadata extension
 
 ---
 
-## Prepare environment
+## Implementation
 
-```sh
-$ brew cask install adoptopenjdk8
-$ brew install mill
-$ brew cask install visual-studio-code
+--
+
+## Torrent Metadata
+
+(also known as `metainfo` or just torrent file)
+
+- does not contain the content to be distributed
+- contains information about those files, such as their names, sizes, folder structure, and cryptographic hash values for verifying file integrity
+- is a bencoded dictionary
+
+--
+
+## Bencoding
+
+Supports four different types of values:
+
+- **byte strings**
+- integers
+- lists
+- dictionaries (associative arrays)
+
+--
+
+## Bencoding
+
+Single file
 ```
-Install plugins in Visual Studio
-- [Live Share](https://visualstudio.microsoft.com/services/live-share/)
-- [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
+{
+    'announce': 'http://bttracker.debian.org:6969/announce',
+    'info':
+    {
+        'name': 'debian-503-amd64-CD-1.iso',
+        'piece length': 262144,
+        'length': 678301696,
+        'pieces': <binary SHA1 hashes>
+    }
+}
+```
 
----
+--
 
-Join shared session
+## Bencoding
 
-<img width="200px" data-src="/assets/images/bittorrent-0/vscode-logo.png">
-
-`Visual Studio Code`
-
----
-
-## Protocol
-
-- [Specification](https://www.bittorrent.org/beps/bep_0003.html)
-- [Specification](https://wiki.theory.org/index.php/BitTorrentSpecification) in wiki style
+Multiple files
+```
+ {
+     'announce': 'http://tracker.site1.com/announce',
+     'info':
+     {
+         'name': 'directoryName',
+         'piece length': 262144,
+         'files':
+         [
+             {'path': ['111.txt'], 'length': 111},
+             {'path': ['222.txt'], 'length': 222}
+         ],
+         'pieces': <binary SHA1 hashes>
+     }
+ }
+```
 
 --
 
@@ -96,6 +146,8 @@ Join shared session
 - Lists are encoded as an `l` followed by their elements (also bencoded) followed by an `e`. For example `l4:spam4:eggse` corresponds to `['spam', 'eggs']`.
 
 - Dictionaries are encoded as a `d` followed by a list of alternating keys and their corresponding values followed by an `e`. For example, `d3:cow3:moo4:spam4:eggse` corresponds to `{'cow': 'moo', 'spam': 'eggs'}` and `d4:spaml1:a1:bee` corresponds to `{'spam': ['a', 'b']}`. Keys must be strings and appear in sorted order (sorted as raw strings, not alphanumerics).
+
+[Source](https://www.bittorrent.org/beps/bep_0003.html)
 
 </small>
 
@@ -123,3 +175,24 @@ value           = integer | string | dictionary;
 <small>
 ❗ string: number specifies length of byte string
 </small>
+
+---
+
+## Prepare environment
+
+```sh
+$ brew cask install adoptopenjdk8
+$ brew install mill
+$ brew cask install visual-studio-code
+```
+Install plugins in Visual Studio
+- [Live Share](https://visualstudio.microsoft.com/services/live-share/)
+- [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
+
+---
+
+Join shared session
+
+<img width="200px" data-src="/assets/images/bittorrent-0/vscode-logo.png">
+
+`Visual Studio Code`
