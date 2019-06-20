@@ -8,7 +8,7 @@ tags:
   - slides
 ---
 
-<a class="btn btn-primary" href="/slides/bittorrent-0/">Veiw slides</a>
+<a class="btn btn-primary" href="/slides/bittorrent-0/">View slides</a>
 
 First workshop of the BitTorrent series.
 
