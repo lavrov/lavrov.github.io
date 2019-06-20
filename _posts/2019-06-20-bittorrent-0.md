@@ -15,6 +15,6 @@ First workshop of the BitTorrent series.
 - BitTorrent in a nutshell
 - Implementing binary protocol with [scodec](https://github.com/scodec/scodec)
 
-[Source code](https://github.com/lavrov/bittorrent)
+[Source code](https://github.com/lavrov/bittorrent-workshop)
 
 Presented at [Amsterdam.scala](https://www.meetup.com/amsterdam-scala/events/262312636/).

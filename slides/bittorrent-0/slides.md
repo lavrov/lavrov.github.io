@@ -233,8 +233,8 @@ Join shared session
 
 Source code
 
-[https://github.com/lavrov/bittorrent](https://github.com/lavrov/bittorrent)
+[https://github.com/lavrov/bittorrent-workshop](https://github.com/lavrov/bittorrent-workshop)
 
 ```
-$ git clone git@github.com:lavrov/bittorrent.git
+$ git git@github.com:lavrov/bittorrent-workshop.git
 ```
