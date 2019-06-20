@@ -180,14 +180,46 @@ value           = integer | string | dictionary;
 
 ## Prepare environment
 
+JDK
+
 ```sh
 $ brew cask install adoptopenjdk8
+```
+
+--
+
+[Mill build tool](http://www.lihaoyi.com/mill/)
+
+```sh
 $ brew install mill
+```
+
+--
+
+[Visual Studio Code](https://code.visualstudio.com/Download)
+
+```sh
 $ brew cask install visual-studio-code
 ```
-Install plugins in Visual Studio
+Plugins:
 - [Live Share](https://visualstudio.microsoft.com/services/live-share/)
 - [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
+
+--
+
+[Intellij IDEA](https://www.jetbrains.com/idea/download/index.html)
+
+```sh
+$ brew cask install intellij-idea-ce
+```
+
+Inatall Scala plugin
+
+Generate IDEA project
+
+```sh
+$ mill mill.scalalib.GenIdea/idea
+```
 
 ---
 
@@ -196,3 +228,13 @@ Join shared session
 <img width="200px" data-src="/assets/images/bittorrent-0/vscode-logo.png">
 
 `Visual Studio Code`
+
+--
+
+Source code
+
+[https://github.com/lavrov/bittorrent](https://github.com/lavrov/bittorrent)
+
+```
+$ git clone git@github.com:lavrov/bittorrent.git
+```
