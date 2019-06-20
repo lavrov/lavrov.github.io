@@ -37,6 +37,14 @@
 
 --
 
+## I'm not the only one
+
+- [Haze](https://github.com/cronokirby/haze) (haskell, stm)
+- [TorrentStream](https://github.com/Karasiq/torrentstream) (akka-streams)
+- [Storrent](https://github.com/danluu/storrent) (akka)
+
+--
+
 ## Bittorrent in a nutshell
 
 --
