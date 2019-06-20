@@ -16,7 +16,7 @@
 
 - [2.13.0 released](https://github.com/scala/scala/releases/tag/v2.13.0) 🎉
 - [ScalaDays recordings](https://portal.klewel.com/watch/nice_url/scala-days-2019/) are online
-- [Scala 3 Is Coming](https://info.lightbend.com/webinar-scala-3-is-coming-martin-odersky-shares-what-to-know-register.html) webinar with Martin Odersky
+- [Scala 3 Is Coming](https://info.lightbend.com/webinar-scala-3-is-coming-martin-odersky-shares-what-to-know-register.html) webinar with Martin Odersky on 11th of July 2019
 
 ---
 
