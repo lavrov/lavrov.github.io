@@ -229,7 +229,7 @@ Join shared session
 
 `Visual Studio Code`
 
---
+---
 
 Source code
 
