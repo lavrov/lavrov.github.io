@@ -198,12 +198,15 @@ $ brew install mill
 
 [Visual Studio Code](https://code.visualstudio.com/Download)
 
+<small>[Why?](https://portal.klewel.com/watch/webcast/scala-days-2019/talk/8/)</small>
+
 ```sh
 $ brew cask install visual-studio-code
 ```
 Plugins:
 - [Live Share](https://visualstudio.microsoft.com/services/live-share/)
 - [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
+
 
 --
 
