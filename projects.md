@@ -4,8 +4,10 @@ title: Projects
 background: '/assets/images/background.jpg'
 ---
 
-### TorrentDam
+### [TorrentDam](https://github.com/TorrentDam)
 
 Full-stack bittorrent client implementaion.
 
-[Source code](https://github.com/TorrentDam) [Website](https://torrentdam.github.io/)
+### [Home cluster](https://github.com/lavrov/home-cluster)
+
+K8s cluster running on 3x Raspberry Pi 4.
