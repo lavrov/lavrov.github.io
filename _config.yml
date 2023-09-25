@@ -25,6 +25,8 @@ linkedin_username: vitaly-lavrov
 github_username:  lavrov
 background: '/assets/images/background.jpg'
 
+google_analytics: UA-134618981-1
+
 # Build settings
 markdown: kramdown
 remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
