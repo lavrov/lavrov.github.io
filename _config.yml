@@ -27,7 +27,7 @@ background: '/assets/images/background.jpg'
 
 # Build settings
 markdown: kramdown
-remote_theme: BlackrockDigital/startbootstrap-clean-blog-jekyll
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 plugins:
   - jekyll-feed
 

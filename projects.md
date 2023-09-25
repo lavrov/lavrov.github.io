@@ -1,5 +1,7 @@
 ---
-layout: page-md
+layout: page
+title: Projects
+background: '/assets/images/background.jpg'
 ---
 
 ### TorrentDam
