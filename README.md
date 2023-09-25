@@ -2,10 +2,10 @@
 
 Website
 
-
-## Development
+## Local development
 
 ```sh
-$ bundler install --path .vendor/bundler
-$ bundler exec jekyll serve
+nix develop
+bundler install --path .vendor/bundler
+jekyll serve
 ```
