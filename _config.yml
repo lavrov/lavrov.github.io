@@ -20,7 +20,6 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 revealjs_baseurl: "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
-twitter_username: lavrovvv
 linkedin_username: vitaly-lavrov
 github_username:  lavrov
 background: '/assets/images/background.jpg'
